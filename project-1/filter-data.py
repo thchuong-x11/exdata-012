@@ -1,3 +1,9 @@
+"""
+This python script is used to truncate data
+It reads the household_power_consumption.txt line by line
+and writes to data.txt only the lines between 1/2/2007 and 2/2/2007
+"""
+
 import csv
 fin = 'household_power_consumption.txt'
 fout = 'data.txt'
@@ -10,6 +16,7 @@ fieldnames = ['Date',
 			'Sub_metering_1',
 			'Sub_metering_2',
 			'Sub_metering_3']
+			
 with open(fin, 'rb') as infile:
 	with open(fout, 'w') as outfile:
 		reader = csv.DictReader(infile, fieldnames, delimiter=";")
